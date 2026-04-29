@@ -58,6 +58,7 @@ button {
 }
 
 .page-shell {
+  position: relative;
   width: min(100%, var(--shell-width));
   margin: 0 auto;
   padding: 0 28px 56px;
@@ -911,6 +912,35 @@ button {
   gap: 2px;
 }
 
+.credit-note {
+  position: fixed;
+  left: 28px;
+  bottom: 16px;
+  z-index: 7;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, white 82%, var(--panel));
+  color: color-mix(in srgb, var(--ink-soft) 88%, var(--accent));
+  font-size: 0.78rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.06);
+}
+
+.credit-note:hover,
+.credit-note:focus-visible {
+  color: var(--accent);
+}
+
+.credit-note-icon {
+  flex: 0 0 auto;
+  opacity: 0.85;
+}
+
 .floating-nav-button {
   display: inline-flex;
   align-items: center;
@@ -1220,6 +1250,11 @@ button {
   .floating-nav {
     right: 18px;
     bottom: 18px;
+  }
+
+  .credit-note {
+    left: 20px;
+    bottom: 14px;
   }
 }
 

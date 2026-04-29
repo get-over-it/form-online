@@ -66,7 +66,7 @@
   const definition = {
     config: {
       defaultLanguage: "en",
-      endpointUrl: "https://script.google.com/macros/s/AKfycbx4rw1sMkHonbWaFBmNJ065FGvlQYHT_5McZoAiJ1e-BJIh6SA2wf3AEqt2N0XSwwXr/exec",
+      endpointUrl: "https://script.google.com/macros/s/AKfycbwncnKwgyE3Mv_orjTpFzEfIT5h2x-3xs5YtI84tBAY75qUA2wEBqCEPz_ZtSiAmSshVQ/exec",
       draftStorageKey: "encg-esp-survey-draft-v1",
       submittedStorageKey: "encg-esp-survey-submitted-v1",
       version: "2026-04-29"
