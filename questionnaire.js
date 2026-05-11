@@ -101,7 +101,7 @@
       successCopy: t("Your anonymous answers will support the analysis of Business English needs at ENCG.", "Vos réponses anonymes contribueront à l'analyse des besoins en anglais des affaires à l'ENCG.")
     },
     meta: {
-      title: t("A Needs Analysis of Business English ESP at ENCG", "Une analyse des besoins en anglais des affaires à l'ENCG"),
+      title: t("A Needs Analysis of Business English ESP at ENCG Tangier", "Une analyse des besoins en anglais des affaires à l'ENCG Tanger"),
       description: t(
         "This questionnaire is part of a needs analysis of the Business English curriculum at ENCG; your responses will help identify how well the current programme meets students' language learning needs.",
         "Ce questionnaire s'inscrit dans une analyse des besoins du programme d'anglais des affaires à l'ENCG ; vos réponses aideront à déterminer dans quelle mesure le programme actuel répond aux besoins linguistiques des étudiants."
@@ -186,66 +186,59 @@
       {
         id: "A1",
         sectionId: "A",
-        title: t("Which ENCG campus do you attend?", "À quel campus de l'ENCG êtes-vous inscrit(e) ?"),
-        description: t("Background information", "Informations générales"),
-        fields: [{ id: "A1_campus", type: "select", required: true, options: [["agadir", "Agadir"], ["casablanca", "Casablanca"], ["dakhla", "Dakhla"], ["el_jadida", "El Jadida"], ["fes", "Fès"], ["kenitra", "Kenitra"], ["marrakech", "Marrakech"], ["oujda", "Oujda"], ["settat", "Settat"], ["tangier", "Tangier"], ["tetouan", "Tétouan"]].map(([value, label]) => ({ value, label: t(label, label) })) }]
+        title: t("What year of study are you in?", "En quelle année d'études êtes-vous ?"),
+        fields: [{ id: "A1_year", type: "radio", required: true, options: [{ value: "4th_year", label: t("4th year", "4e année") }, { value: "5th_year", label: t("5th year", "5e année") }] }]
       },
       {
         id: "A2",
         sectionId: "A",
-        title: t("What year of study are you in?", "En quelle année d'études êtes-vous ?"),
-        fields: [{ id: "A2_year", type: "radio", required: true, options: [{ value: "4th_year", label: t("4th year", "4e année") }, { value: "5th_year", label: t("5th year", "5e année") }] }]
-      },
-      {
-        id: "A3",
-        sectionId: "A",
         title: t("What is your pathway?", "Quelle est votre filière ?"),
-        fields: [{ id: "A3_pathway", type: "radio", required: true, options: [{ value: "gestion", label: t("Gestion", "Gestion") }, { value: "commerce", label: t("Commerce", "Commerce") }, { value: "not_declared", label: t("Not yet declared", "Pas encore déclarée") }] }]
+        fields: [{ id: "A2_pathway", type: "radio", required: true, options: [{ value: "gestion", label: t("Gestion", "Gestion") }, { value: "commerce", label: t("Commerce", "Commerce") }, { value: "not_declared", label: t("Not yet declared", "Pas encore déclarée") }] }]
       },
       {
-        id: "A3_1",
+        id: "A2_1",
         sectionId: "A",
         title: t("What is your specialization?", "Quelle est votre spécialisation ?"),
         description: t("Shown only for students in Gestion.", "Affichée uniquement pour les étudiants en Gestion."),
-        visibleWhen: (answers) => answers.A3_pathway === "gestion",
+        visibleWhen: (answers) => answers.A2_pathway === "gestion",
         fields: [{
-          id: "A3_1_gestion_specialization",
+          id: "A2_1_gestion_specialization",
           type: "select",
           required: true,
           options: [["gestion_financiere_comptable", "Gestion Financière et Comptable"], ["audit_controle_gestion", "Audit et Contrôle de Gestion"], ["grh", "Gestion des Ressources Humaines (GRH)"], ["logistique", "Logistique"], ["not_declared", "Not yet declared"], ["other", "Other"]].map(([value, enLabel]) => ({ value, label: t(enLabel, enLabel === "Not yet declared" ? "Pas encore déclarée" : enLabel === "Other" ? "Autre" : enLabel) }))
         }]
       },
       {
-        id: "A3_2",
+        id: "A2_2",
         sectionId: "A",
         title: t("What is your specialization?", "Quelle est votre spécialisation ?"),
         description: t("Shown only for students in Commerce.", "Affichée uniquement pour les étudiants en Commerce."),
-        visibleWhen: (answers) => answers.A3_pathway === "commerce",
+        visibleWhen: (answers) => answers.A2_pathway === "commerce",
         fields: [{
-          id: "A3_2_commerce_specialization",
+          id: "A2_2_commerce_specialization",
           type: "select",
           required: true,
           options: [["marketing_action_commerciale", "Marketing et Action Commerciale"], ["commerce_international", "Commerce International"], ["publicite_communication", "Publicité et Communication"], ["crm", "Customer Relationship Management (CRM)"], ["not_declared", "Not yet declared"], ["other", "Other"]].map(([value, enLabel]) => ({ value, label: t(enLabel, enLabel === "Not yet declared" ? "Pas encore déclarée" : enLabel === "Other" ? "Autre" : enLabel) }))
         }]
       },
       {
-        id: "A4",
+        id: "A3",
         sectionId: "A",
         title: t("Gender", "Genre"),
-        fields: [{ id: "A4_gender", type: "radio", required: true, options: [{ value: "female", label: t("Female", "Femme") }, { value: "male", label: t("Male", "Homme") }] }]
+        fields: [{ id: "A3_gender", type: "radio", required: true, options: [{ value: "female", label: t("Female", "Femme") }, { value: "male", label: t("Male", "Homme") }] }]
+      },
+      {
+        id: "A4",
+        sectionId: "A",
+        title: t("What is your age?", "Quel est votre âge ?"),
+        fields: [{ id: "A4_age", type: "radio", required: true, options: [{ value: "under_20", label: t("Under 20", "Moins de 20 ans") }, { value: "20_22", label: t("20–22", "20–22 ans") }, { value: "23_25", label: t("23–25", "23–25 ans") }, { value: "over_25", label: t("Over 25", "Plus de 25 ans") }] }]
       },
       {
         id: "A5",
         sectionId: "A",
-        title: t("What is your age?", "Quel est votre âge ?"),
-        fields: [{ id: "A5_age", type: "radio", required: true, options: [{ value: "under_20", label: t("Under 20", "Moins de 20 ans") }, { value: "20_22", label: t("20–22", "20–22 ans") }, { value: "23_25", label: t("23–25", "23–25 ans") }, { value: "over_25", label: t("Over 25", "Plus de 25 ans") }] }]
-      },
-      {
-        id: "A6",
-        sectionId: "A",
         title: t("How would you rate your overall level of English?", "Comment évalueriez-vous votre niveau général d'anglais ?"),
         fields: [{
-          id: "A6_english_level",
+          id: "A5_english_level",
           type: "radio",
           required: true,
           options: [
@@ -257,23 +250,23 @@
         }]
       },
       {
-        id: "A7",
+        id: "A6",
         sectionId: "A",
         title: t("What is the status of your final-year project (PFE)?", "Quel est l'état d'avancement de votre projet de fin d'études (PFE) ?"),
-        fields: [{ id: "A7_pfe_status", type: "radio", required: true, options: [{ value: "not_started", label: t("Not yet started", "Pas encore commencé") }, { value: "in_progress", label: t("Currently doing it", "En cours") }, { value: "completed", label: t("Completed", "Terminé") }] }]
+        fields: [{ id: "A6_pfe_status", type: "radio", required: true, options: [{ value: "not_started", label: t("Not yet started", "Pas encore commencé") }, { value: "in_progress", label: t("Currently doing it", "En cours") }, { value: "completed", label: t("Completed", "Terminé") }] }]
+      },
+      {
+        id: "A7",
+        sectionId: "A",
+        title: t("What is the status of your internship?", "Quel est l'état d'avancement de votre stage ?"),
+        fields: [{ id: "A7_internship_status", type: "radio", required: true, options: [{ value: "not_started", label: t("Not yet started", "Pas encore commencé") }, { value: "in_progress", label: t("In progress", "En cours") }, { value: "completed", label: t("Completed", "Terminé") }] }]
       },
       {
         id: "A8",
         sectionId: "A",
-        title: t("What is the status of your internship?", "Quel est l'état d'avancement de votre stage ?"),
-        fields: [{ id: "A8_internship_status", type: "radio", required: true, options: [{ value: "not_started", label: t("Not yet started", "Pas encore commencé") }, { value: "in_progress", label: t("In progress", "En cours") }, { value: "completed", label: t("Completed", "Terminé") }] }]
-      },
-      {
-        id: "A9",
-        sectionId: "A",
         title: t("During your internship, how often did you use English?", "Pendant votre stage, à quelle fréquence avez-vous utilisé l'anglais ?"),
-        visibleWhen: (answers) => ["in_progress", "completed"].includes(answers.A8_internship_status),
-        fields: [{ id: "A9_internship_english_frequency", type: "radio", required: true, options: [{ value: "never", label: t("Never", "Jamais") }, { value: "rarely", label: t("Rarely", "Rarement") }, { value: "sometimes", label: t("Sometimes", "Parfois") }, { value: "often", label: t("Often", "Souvent") }, { value: "always", label: t("Always", "Toujours") }] }]
+        visibleWhen: (answers) => ["in_progress", "completed"].includes(answers.A7_internship_status),
+        fields: [{ id: "A8_internship_english_frequency", type: "radio", required: true, options: [{ value: "never", label: t("Never", "Jamais") }, { value: "rarely", label: t("Rarely", "Rarement") }, { value: "sometimes", label: t("Sometimes", "Parfois") }, { value: "often", label: t("Often", "Souvent") }, { value: "always", label: t("Always", "Toujours") }] }]
       },
       {
         id: "B1",
