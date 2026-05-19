@@ -101,7 +101,7 @@
       successCopy: t("Your anonymous answers will support the analysis of Business English needs at ENCG.", "Vos réponses anonymes contribueront à l'analyse des besoins en anglais des affaires à l'ENCG.")
     },
     meta: {
-      title: t("A Needs Analysis of Business English ESP at ENCG Tangier", "Une analyse des besoins en anglais des affaires à l'ENCG Tanger"),
+      title: t("A Needs Analysis of Business English ESP at ENCG", "Une analyse des besoins en anglais des affaires à l'ENCG"),
       description: t(
         "This questionnaire is part of a needs analysis of the Business English curriculum at ENCG; your responses will help identify how well the current programme meets students' language learning needs.",
         "Ce questionnaire s'inscrit dans une analyse des besoins du programme d'anglais des affaires à l'ENCG ; vos réponses aideront à déterminer dans quelle mesure le programme actuel répond aux besoins linguistiques des étudiants."
